@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About page{% endblock %}
+{% block content %}
+
+
+<!-- MAIN SECTION -->
+<div class="main flex flex-col md:flex-row items-center justify-center gap-12 min-h-screen px-6 md:px-16 py-10">
+
+    <!-- LEFT IMAGE -->
+    <div class="left w-full md:w-1/2 flex justify-center">
+
+        <img
+            class="w-[250px] sm:w-[300px] md:w-[320px] rounded-2xl object-cover shadow-lg"
+            src="{% static 'images/portfolio.jpeg' %}"
+            alt="Profile"
+        >
+
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="right w-full md:w-1/2">
+
+        <div class="content text-gray-400 leading-8 text-sm sm:text-base text-center md:text-left">
+
+            <p>
+                Hi, I’m 
+                <span class="text-orange-400 font-semibold">
+                    Anas Mukhtar
+                </span>
+                — a full-stack web developer and creative designer focused on building modern,
+                high-performance digital experiences.
+            </p>
+
+            <br>
+
+            <p>
+                I specialize in crafting responsive frontends, scalable backend systems,
+                and intuitive UI/UX designs that combine aesthetics with functionality.
+            </p>
+
+            <br>
+
+            <p>
+                Beyond traditional development, I create immersive 3D animations and dynamic
+                web applications that elevate user interaction and bring ideas to life.
+            </p>
+
+        </div>
+
+        <!-- BUTTON -->
+        <div class="mt-8 flex justify-center md:justify-start">
+    <a 
+    href="{% static 'files/Anas_CV.pdf' %}" 
+    download
+    class="inline-flex items-center gap-2 px-6 py-3 
+        border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden"
+>
+    <i class="fa-solid fa-download"></i>
+    Download CV
+</a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

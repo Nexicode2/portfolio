@@ -1,0 +1,460 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Portfolio Page
+{% endblock %}
+
+{% block content %}
+
+<section class="pcards max-w-7xl mx-auto px-6 py-20 text-center">
+    <h1 class="text-5xl md:text-7xl font-bold">
+        My Portfolio
+    </h1>
+
+    <p class="text-zinc-400 mt-6 max-w-2xl mx-auto">
+    A fully responsive Amazon-inspired e-commerce platform featuring
+    product listings, shopping cart functionality, user authentication,
+    search features, and a modern UI built with Django, Tailwind CSS,
+    and JavaScript.
+    </p>
+</section>
+
+<section class="max-w-7xl mx-auto px-6 py-10">
+
+    <h2 class="text-4xl font-bold text-green-500 mb-10 text-center">
+        Featured Projects
+    </h2>
+
+    <div class=" grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project Card -->
+       <div class="pcard">
+    <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:-translate-y-3 transition">
+
+        <img
+            src="{% static 'images/amazon.png' %}"
+            alt="Amazon Clone"
+            class="w-full h-60 object-cover"
+        >
+
+        <div class="p-6">
+            <h3 class="text-2xl font-bold">
+                Amazon Clone
+            </h3>
+
+            <p class="text-zinc-400 mt-3 line-clamp-3">
+                A fully responsive Amazon-inspired e-commerce platform featuring
+                product listings, shopping cart functionality, user authentication,
+                search features, and a modern UI built with Django, Tailwind CSS,
+                and JavaScript.
+            </p>
+
+            <div class="flex gap-2 flex-wrap mt-4">
+                <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">React</span>
+                <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">javascript</span>
+                <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Tailwind</span>
+            </div>
+
+            <div class="flex gap-3 mt-6">
+                <button class="px-4 py-2 border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+                <a href="https://amazon-eta-six.vercel.app">Live Demo</a>
+                </button>
+
+                <button class="border border-zinc-700 px-4 py-2 rounded-lg">
+                    GitHub
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+        <!-- Project Card 2 -->
+         <div class="pcard">
+        <div class=" bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:-translate-y-3 transition">
+
+    <img
+        src="{% static 'images/ppsc.png' %}"
+        alt="PPSC Preparation Portal"
+        class="w-full h-60 object-cover"
+    >
+
+    <div class="p-6">
+        <h3 class="text-2xl font-bold">
+            PPSC Preparation Portal
+        </h3>
+
+        <p class="text-zinc-400 mt-3 line-clamp-3">
+            An educational platform designed for PPSC aspirants, featuring
+            online quizzes, past papers, MCQ practice tests, subject-wise
+            preparation materials, merit calculators, and a responsive user
+            interface to help students prepare effectively for competitive exams.
+        </p>
+
+        <div class="flex gap-2 flex-wrap mt-4">
+            <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">React</span>
+            <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+            <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Tailwind</span>
+        </div>
+
+        <div class="flex gap-3 mt-6">
+            <button class="px-4 py-2 border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+               <a href="https://ppsc-mu.vercel.app">Live Demo</a>
+            </button>
+
+            <button class="border border-zinc-700 px-4 py-2 rounded-lg">
+                GitHub
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+         <!-- Project Card 3-->
+          <div class="pcard">
+        <div class=" bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:-translate-y-2 transition">
+
+            <img
+                src="{% static 'images/google.png' %}"
+                alt="Amazon Clone"
+                class="w-full h-60 object-cover"
+            >
+
+            <div class="p-6">
+                <h3 class="text-2xl font-bold">
+                    Google Clone 
+                </h3>
+
+                <p class="text-zinc-400 mt-3 line-clamp-3">
+                A Google-inspired search engine clone designed with a clean and minimal UI. 
+                It replicates the core homepage experience with a centered search bar, responsive layout,
+                and smooth user interaction, focusing on simplicity and usability.
+                </p>
+
+                <div class="flex gap-2 flex-wrap mt-4">
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">React</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Django</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button class="px-4 py-2 border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+                        <a href="https://google-sepia-phi.vercel.app">Live Demo</a>
+                    </button>
+
+                    <button class="border border-zinc-700 px-4 py-2 rounded-lg">
+                        GitHub
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+         <!-- Project Card 4-->
+          <div class="pcard2">
+        <div class=" bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:-translate-y-2 transition">
+
+            <img
+                src="{% static 'images/netflix.png' %}"
+                alt="Amazon Clone"
+                class="w-full h-60 object-cover"
+            >
+
+            <div class="p-6">
+                <h3 class="text-2xl font-bold">
+                    Netflix Clone
+                </h3>
+
+                <p class="text-zinc-400 mt-3 line-clamp-3">
+                    A Netflix-inspired movie streaming platform clone built with a modern and responsive UI. It includes categorized movie sections,
+                    featured banners, smooth scrolling interface, and a clean user experience similar to Netflix’s homepage design.
+                </p>
+
+                <div class="flex gap-2 flex-wrap mt-4">
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">React</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Django</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button class="px-4 py-2 border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+                        <a href="https://netfix-weld.vercel.app">Live Demo</a>
+                    </button>
+
+                    <button class="border border-zinc-700 px-4 py-2 rounded-lg">
+                        GitHub
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+         <!-- Project Card 5-->
+          <div class="pcard2">
+        <div class=" bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:-translate-y-2 transition">
+
+            <img
+                src="{% static 'images/nextgen.png' %}"
+                alt="Amazon Clone"
+                class="w-full h-60 object-cover"
+            >
+
+            <div class="p-6">
+                <h3 class="text-2xl font-bold">
+                    Tecloset Clone
+                </h3>
+
+                <p class="text-zinc-400 mt-3 line-clamp-3">
+                    Tecloset is a modern fashion e-commerce platform that allows users to explore trendy clothing collections, view product details, and enjoy a smooth shopping experience. It features a responsive design, organized
+                    categories, and a user-friendly interface inspired by modern online clothing stores.
+                </p>
+
+                <div class="flex gap-2 flex-wrap mt-4">
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">React</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Django</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button class="px-4 py-2 border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+                         <a href="https://tecloset.vercel.app">Live Demo</a>
+                    </button>
+
+                    <button class="border border-zinc-700 px-4 py-2 rounded-lg">
+                        GitHub
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Project Card 6-->
+         <div class="pcard2">
+        <div class=" bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:-translate-y-2 transition">
+
+            <img
+                src="{% static 'images/daraz.png' %}"
+                alt="Amazon Clone"
+                class="w-full h-60 object-cover"
+            >
+
+            <div class="p-6">
+                <h3 class="text-2xl font-bold">
+                    Daraz Clone
+                </h3>
+
+                <p class="text-zinc-400 mt-3 line-clamp-3" >
+                    A responsive Daraz-inspired e-commerce platform clone designed for browsing products,
+                    viewing categories, and simulating an online shopping experience with a modern UI.
+                </p>
+
+                <div class="flex gap-2 flex-wrap mt-4">
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">React</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Django</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button class="px-4 py-2 border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+                       <a href="https://draz-sigma.vercel.app">Live Demo</a>
+                    </button>
+
+                    <button class="border border-zinc-700 px-4 py-2 rounded-lg">
+                        GitHub
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+         <!-- Project Card 7 -->
+          <div class="pcard3">
+        <div class=" bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:-translate-y-2 transition">
+
+            <img
+                src="{% static 'images/countdown.png' %}"
+                alt="Amazon Clone"
+                class="w-full h-60 object-cover"
+            >
+
+            <div class="p-6">
+                <h3 class="text-2xl font-bold">
+                    Celebration Countdown
+                </h3>
+
+                <p class="text-zinc-400 mt-3 line-clamp-3">
+                    A responsive countdown timer application that displays remaining time for events such as birthdays,
+                    launches, or special occasions with a clean and interactive UI.
+                </p>
+
+                <div class="flex gap-2 flex-wrap mt-4">
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">React</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Django</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button class="px-4 py-2 border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+                        <a href="https://countdown-ashen-pi.vercel.app">Live Demo</a>
+                    </button>
+
+                    <button class="border border-zinc-700 px-4 py-2 rounded-lg">
+                        GitHub
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Project Card 8-->
+         <div class="pcard3">
+        <div class=" bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:-translate-y-2 transition">
+
+            <img
+                src="{% static 'images/birthday.png' %}"
+                alt="Amazon Clone"
+                class="w-full h-60 object-cover"
+            >
+
+            <div class="p-6">
+                <h3 class="text-2xl font-bold">
+                    Birthday Celebration Page
+                </h3>
+
+                <p class="text-zinc-400 mt-3 line-clamp-3">
+                    A responsive birthday celebration web page featuring a countdown timer, animated effects,
+                    and personalized wishes to create a fun and interactive birthday experience.
+                </p>
+
+                <div class="flex gap-2 flex-wrap mt-4">
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">React</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Django</span>
+                    <span class="bg-zinc-800 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button class="px-4 py-2 border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+                        <a href="https://birthday-delta-blue.vercel.app">Live Demo</a>
+                    </button>
+
+                    <button class="border border-zinc-700 px-4 py-2 rounded-lg">
+                        GitHub
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>  
+    </div>
+
+</section>
+
+<section class="max-w-7xl mx-auto px-6 py-20">
+
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+
+        <div>
+            <h3 class="text-5xl font-bold text-green-600">20+</h3>
+            <p class="text-zinc-400 mt-2">Projects Completed</p>
+        </div>
+
+        <div>
+            <h3 class=" text-5xl font-bold text-green-600 ">6+</h3>
+            <p class="text-zinc-400 mt-2">Technologies Used</p>
+        </div>
+
+        <div>
+            <h3 class="text-5xl font-bold text-green-600">5+</h3>
+            <p class="text-zinc-400 mt-2">Years Learning</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="max-w-7xl mx-auto px-6 py-20">
+
+    <h2 class="text-4xl font-bold text-center mb-12">
+        Tech Stack
+    </h2>
+
+    <div class="flex  flex-col md:flex-row justify-center gap-10">
+
+        <!-- Left Box -->
+        <div class="skills flex flex-col w-full md:w-[45%] p-6 md:p-10 py-12 md:py-20 bg-white/10 rounded-xl space-y-2">
+
+            <h3 class="text-white text-lg font-semibold">HTML</h3>
+            <div class="text-[12px] text-white bg-gradient-to-r from-30% from-green-500 to-blue-400 rounded-full pl-5 flex items-center justify-end pr-3"
+                style="width: 90%; height:0.7rem;">
+                90%
+            </div>
+
+            <h3 class="text-white text-lg font-semibold">CSS</h3>
+            <div class=" text-[12px] text-white bg-gradient-to-r from-30% from-green-500 to-blue-400 rounded-full pl-5 flex items-center justify-end pr-3"
+                style="width: 76%; height:0.7rem;">
+                72%
+            </div>
+
+            <h3 class="text-white text-lg font-semibold">JavaScript</h3>
+            <div class="text-[12px] text-white bg-gradient-to-r from-30% from-green-500 to-blue-400 rounded-full pl-5 flex items-center justify-end pr-3"
+                style="width: 59%; height:0.7rem;">
+                89%
+            </div>
+
+
+            <h3 class="text-white text-lg font-semibold">Tailwind CSS</h3>
+            <div class="text-[12px] text-white bg-gradient-to-r from-30% from-green-500 to-blue-400 rounded-full pl-5 flex items-center justify-end pr-3"
+                style="width: 67%; height:0.7rem;">
+                67%
+            </div>
+
+        </div>
+
+        <!-- Right Box -->
+        <div class="skills flex flex-col w-full md:w-[45%] p-6 md:p-10 py-12 md:py-20 bg-white/10 rounded-xl space-y-2">
+
+
+            <h3 class="text-white text-lg font-semibold">Python</h3>
+            <div class="text-[12px] text-white bg-gradient-to-r from-30% from-green-500 to-blue-400 rounded-full pl-5 flex items-center justify-end pr-3"
+                style="width: 87%; height:0.7rem;">
+                87%
+            </div>
+
+            <h3 class="text-white text-lg font-semibold">Django</h3>
+            <div class="text-[12px] text-white bg-gradient-to-r from-30% from-green-500 to-blue-400 rounded-full pl-5 flex items-center justify-end pr-3"
+                style="width: 54%; height:0.7rem;">
+                54%
+            </div>
+
+            <h3 class="text-white text-lg font-semibold">Mongodb</h3>
+            <div class="text-[12px] text-white bg-gradient-to-r from-30% from-green-500 to-blue-400 rounded-full pl-5 flex items-center justify-end pr-3"
+                style="width: 69%; height:0.7rem;">
+                69%
+            </div>
+            <h3 class="text-white text-lg font-semibold">Git</h3>
+            <div class="text-[12px] text-white bg-gradient-to-r from-30% from-green-500 to-blue-400 rounded-full pl-5 flex items-center justify-end pr-3"
+                style="width: 85%; height:0.7rem;">
+                85%
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="max-w-5xl mx-auto px-6 py-20">
+
+    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-12 text-center">
+
+        <h2 class="text-4xl font-bold">
+            Have a Project in Mind?
+        </h2>
+
+        <p class="text-zinc-400 mt-4">
+            Let's build something amazing together.
+        </p>
+
+        <a href="{% url 'contact' %}"
+        class="inline-block mt-8 bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-xl text-lg">
+            Contact Me
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

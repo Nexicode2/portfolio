@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block title %}Services page{% endblock %} 
+{% block content %}
+
+
+<div ><h1 class="flex justify-center items-center text-orange-400  font-bold text-5xl mt-10 mb-6 ">Services</h1></div>
+    <div
+    class="cards gap-5 p-5 min-h-screen grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 place-items-center"
+    >
+    <div
+        class="scard1 w-full  lg:w-96 h-120 py-4 shadow-3xl bg-white/10 backdrop-blur-lg border-2 border-white/10  flex flex-col justify-center items-center gap-5 rounded-3xl hover:scale-105 hover:transition-all hover:duration-300 hover:ease-linear"
+    >
+    <h1 class="text-8xl font-bold text-white">01</h1>
+
+    <h2 class="text-3xl  font-bold">Frontend Development</h2>
+
+    <p class="mt-2 text-zinc-400 ">Building responsive and modern websites.</p>
+
+    
+        <ul class="mt-2 text-white text-xl">
+<li>✓ Responsive Design </li>
+<li>✓ Fast Performance</li>
+<li>✓ Modern UI</li>
+<li>✓ Clean Code </li>
+</ul>
+
+    <button data-service="Frontend Development" class=" ser mt-3  px-4 py-2 border border-green-600 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-600 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+    Get service
+
+    </button>
+    </div>
+<div
+    class="scard1 w-full  lg:w-96 h-120 py-4 shadow-3xl bg-white/10 backdrop-blur-lg border-2 border-white/10  flex flex-col justify-center items-center gap-5 rounded-3xl hover:scale-105 hover:transition-all hover:duration-300 hover:ease-linear"
+    >
+    <h1 class="text-8xl font-bold text-white">02</h1>
+
+    <h2 class="text-3xl  font-bold">Backend Development</h2>
+
+    <p class="mt-2 text-zinc-400 ">Building secure server-side applications.</p>
+
+    
+        <ul class="mt-2 text-white text-xl">
+<li>✓ Django Development</li>
+<li>✓ REST APIs</li>
+<li>✓ Authentication</li>
+<li>✓ Database Management </li>
+</ul>
+
+    <button data-service="Backend Development" class=" ser mt-3 px-4 py-2 border border-green-600 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-600 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+        Get service
+    </button>
+    </div> 
+    <div
+        class="scard1 w-full  lg:w-96 h-120 py-4 shadow-3xl bg-white/10 backdrop-blur-lg border-2 border-white/10  flex flex-col justify-center items-center gap-5 rounded-3xl hover:scale-105 hover:transition-all hover:duration-300 hover:ease-linear"
+    >
+    <h1 class="text-8xl font-bold text-white">03</h1>
+
+    <h2 class="text-3xl  font-bold">Full Stack Development</h2>
+
+    <p class="mt-2 text-zinc-400 ">Complete web solutions from frontend to backend.</p>
+
+    
+        <ul class="mt-2 text-white text-xl">
+<li>✓ Custom Web Apps</li>
+<li>✓ API Integration</li>
+<li>✓ Database Design</li>
+<li>✓ Deployment </li>
+</ul>
+
+    <button data-service="Full Stack Development" class=" ser mt-3 px-4 py-2 border border-green-600 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-600 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+        Get service  
+    </button>
+    </div> 
+
+    
+    <div
+        class="scard4 w-full  lg:w-96 h-120 py-4 shadow-3xl bg-white/10 backdrop-blur-lg border-2 border-white/10  flex flex-col justify-center items-center gap-5 rounded-3xl hover:scale-105 hover:transition-all hover:duration-300 hover:ease-linear"
+    >
+    <h1 class="text-8xl font-bold text-white">04</h1>
+
+    <h2 class="text-3xl  font-bold">UI Implementation</h2>
+
+    <p class="mt-2 text-zinc-400 ">Transforming designs into fully functional websites.</p>
+
+    
+        <ul class="mt-2 text-white text-xl">
+<li>✓ Figma to HTML </li>
+<li>✓ Pixel Perfect Layouts</li>
+<li>✓ Responsive Design</li>
+<li>✓ Smooth Animations</li>
+</ul>
+
+    <button data-service="UI Implementation" class="ser mt-3 px-4 py-2 border border-green-600 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-600 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+        Get service
+    </button>
+    </div>
+<div
+        class="scard4 w-full  lg:w-96 h-120 py-4 shadow-3xl bg-white/10 backdrop-blur-lg border-2 border-white/10  flex flex-col justify-center items-center gap-5 rounded-3xl hover:scale-105 hover:transition-all hover:duration-300 hover:ease-linear"
+    >
+    <h1 class="text-8xl font-bold text-white">05</h1>
+
+    <h2 class="text-3xl  font-bold">Perf Optimization</h2>
+
+    <p class="mt-2 text-zinc-400 ">Improving website speed and user experience.</p>
+
+    
+        <ul class="mt-2 text-white text-xl">
+<li>✓ Faster Loading</li>
+<li>✓ SEO Friendly</li>
+<li>✓ Image Optimization</li>
+<li>✓ Code Minification </li>
+</ul>
+
+    <button data-service="Perf Optimization" class="ser mt-3 px-4 py-2 border border-green-600 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-600 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+        Get service
+    </button>
+    </div> 
+    <div
+        class="scard4 w-full  lg:w-96 h-120 py-4 shadow-3xl bg-white/10 backdrop-blur-lg border-2 border-white/10  flex flex-col justify-center items-center gap-5 rounded-3xl hover:scale-105 hover:transition-all hover:duration-300 hover:ease-linear"
+    >
+    <h1 class="text-8xl font-bold text-white">06</h1>
+
+    <h2 class="text-3xl  font-bold">Website Maintenance</h2>
+
+    <p class="mt-2 text-zinc-400 ">Keeping websites updated and running smoothly.</p>
+
+    
+        <ul class="mt-2 text-white text-xl">
+<li>✓ Bug Fixes</li>
+<li>✓ Security Updates</li>
+<li>✓ Performance Monitoring</li>
+<li>✓ Content Updates</li>
+</ul>
+
+    <button data-service="Website Maintenance" class="ser mt-3 px-4 py-2 border border-green-600 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-600 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
+        Get service
+    </button>
+    </div> 
+</div>
+
+{% endblock %}
