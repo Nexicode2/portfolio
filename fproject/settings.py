@@ -23,14 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ur^59#s5zn36*h9w2y_0!+hr+b2l_r!wm^^bxb5f=$1&94x%j#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    ".vercel.app",
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -133,4 +128,3 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATIC_ROOT = BASE_DIR / "staticfiles"
