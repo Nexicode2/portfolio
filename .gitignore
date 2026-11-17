@@ -1,26 +1,6 @@
-# Python cache
-__pycache__/
-*.py[cod]
-
-# Virtual environment
 venv/
-.venv/
-env/
-
-# Environment variables
-.env
-.env.*
-!.env.example
-
-# Django
+__pycache__/
+*.pyc
 db.sqlite3
-staticfiles/
-
-# Node dependencies
-node_modules/
-
-# Vercel
-.vercel/
-
-# IDE
+.env
 .vscode/

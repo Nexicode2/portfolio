@@ -13,222 +13,1155 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
 <style>
-        .active {
-            color:white;
-        border-bottom:2px solid white ;
-        }
-        .factive {
-            border-bottom:2px solid #FB923C ;
-            color:#FB923C;
-        }
-        .bord{
-            border:2px solid rgb(75, 85, 99);
-            padding: 0.3rem;
-            margin-right :1rem;
-        }
-        .btns{
-            border:2px solid #FB923C;
-            font-size:1rem;
-            width: 9rem;
-            height: 2.5rem;
-            
-        }
-       
-    </style>
+    .active {
+        color: #FF7900;
+        border-bottom: 2px solid #B6F23A;
+    }
+
+    .factive {
+        border-bottom: 2px solid #FF7900;
+        color: #FF7900;
+    }
+
+    .bord {
+        border: 2px solid #171717;
+        padding: 0.3rem;
+        margin-right: 1rem;
+        background-color: #171717;
+        color: #F5F5F5;
+    }
+
+    .btns {
+        border: 2px solid #FF7900;
+        background-color: #171717;
+        color: #F5F5F5;
+        font-size: 1rem;
+        width: 9rem;
+        height: 2.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .btns:hover {
+        background-color: #FF7900;
+        color: #0B0B0B;
+        border-color: #FF7900;
+    }
+</style>
+
 </head>
 <body class="bg-black text-orange-400 leading-normal tracking-normal font-sans scroll-smooth">
     
 <div class="container mx-auto sticky top-0 ">
-    <section  >
-<!-- NAVBAR -->
-<nav class="sticky top-0 z-50 bg-black border-b border-gray-800">
-    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
 
-    <!-- Logo -->
-    <div class="text-3xl font-bold">
-    <a href="#">Hexora</a>
-    </div>
+<section>
 
-    <!-- Desktop Menu -->
-    <ul class=" md:flex gap-8 hidden text-lg font-medium relative" >
-        <li><a href="{% url 'home' %}" class="hover:text-white {% if request.path == '/' %} active{% endif %}">Home</a></li>
-        <li><a href="{% url 'about' %}" class="hover:text-white {% if request.path == '/about/' %} active{% endif %}">About</a></li>
-        <li><a href="{% url 'services' %}" class="hover:text-white {% if request.path == '/services/' %} active{% endif %}">Services</a></li>
-        <li><a href="{% url 'portfolio' %}" class="hover:text-white {% if request.path == '/portfolio/' %} active{% endif %}">Portfolio</a></li>
-        <li><a href="{% url 'contact' %}" class="hover:text-white {% if request.path == '/contact/' %} active{% endif %}">Contact</a></li>
-    </ul>
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-[#0B0B0B] border-b border-[#171717]">
 
-    <!-- Mobile Button -->
-    <button id="menuB" class="text-3xl md:hidden ">☰</button>
-    <button id="cmenu" class="text-3xl md:hidden hidden mr-2 text-wrap">x</button>
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+
+            <!-- Logo -->
+            <div class="text-3xl font-bold text-[#FF7900]">
+                <a href="#" class="hover:text-[#B6F23A] transition duration-300">
+                    Hexora<span class="text-[#B6F23A]">.</span>
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="md:flex gap-8 hidden text-lg font-medium relative text-[#F5F5F5]">
+
+                <li>
+                    <a href="{% url 'home' %}"
+                       class="hover:text-[#FF7900] transition duration-300 {% if request.path == '/' %}active{% endif %}">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'about' %}"
+                       class="hover:text-[#FF7900] transition duration-300 {% if request.path == '/about/' %}active{% endif %}">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'services' %}"
+                       class="hover:text-[#FF7900] transition duration-300 {% if request.path == '/services/' %}active{% endif %}">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'portfolio' %}"
+                       class="hover:text-[#FF7900] transition duration-300 {% if request.path == '/portfolio/' %}active{% endif %}">
+                        Portfolio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'contact' %}"
+                       class="hover:text-[#FF7900] transition duration-300 {% if request.path == '/contact/' %}active{% endif %}">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Mobile Buttons -->
+            <button id="menuB"
+                    class="text-3xl md:hidden text-[#FF7900] hover:text-[#B6F23A] transition">
+                ☰
+            </button>
+
+            <button id="cmenu"
+                    class="text-3xl md:hidden hidden mr-2 text-[#FF7900] hover:text-[#B6F23A] transition">
+                ×
+            </button>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobmenu w-full right-2 rounded-lg top-15 absolute hidden md:hidden bg-[#171717] border border-[#F5F5F5]/10 pb-5 shadow-xl">
+
+            <ul class="flex flex-col items-center space-y-4 mt-4 font-semibold text-[#F5F5F5]">
+
+                <li>
+                    <a href="{% url 'home' %}"
+                       class="hover:text-[#FF7900] transition duration-300 {% if request.path == '/' %}active{% endif %}">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'about' %}"
+                       class="hover:text-[#FF7900] transition duration-300 {% if request.path == '/about/' %}active{% endif %}">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'services' %}"
+                       class="hover:text-[#FF7900] transition duration-300 {% if request.path == '/services/' %}active{% endif %}">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'portfolio' %}"
+                       class="hover:text-[#FF7900] transition duration-300 {% if request.path == '/portfolio/' %}active{% endif %}">
+                        Portfolio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% url 'contact' %}"
+                       class="hover:text-[#FF7900] transition duration-300 {% if request.path == '/contact/' %}active{% endif %}">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+</section>
+
     
-    </div>
-    <!-- Mobile Menu -->
-    <div class="mobmenu w-full  right-2 rounded-lg top-15 absolute hidden lg:hidden bg-gray-950 pb-5 ">
-    <ul  class="flex flex-col items-center space-y-3 mt-2 font-semibold  ">
-    <li><a href="{% url 'home' %}"  class="hover:text-white {% if request.path == '/' %} active{% endif %}">Home</a></li>
-    <li><a href="{% url 'about' %}" class="hover:text-white {% if request.path == '/about/' %} active{% endif %}" >About</a></li>
-    <li><a href="{% url 'services' %}"  class="hover:text-white {% if request.path == '/services/' %} active{% endif %}">Services</a></li>
-    <li><a href="{% url 'portfolio' %}"  class="hover:text-white {% if request.path == '/portfolio/' %} active{% endif %}">Portfolio</a></li>
-    <li><a href="{% url 'contact' %}"  class="hover:text-white {% if request.path == '/contact/' %} active{% endif %}">Contact</a></li>
-    </ul>
-    </div>
-</nav>
-        
-    </section>
-    
-    {% block content %}
+   
+{% load static %}
 
-<div class="stl header flex flex-col-reverse md:flex-row justify-between items-center px-6 md:px-16 py-10 min-h-screen">
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+<section class="relative min-h-screen bg-[#030303]
+                flex flex-col md:flex-row
+                items-center justify-between
+                gap-12 px-6 sm:px-10 lg:px-16 py-16">
 
     <!-- LEFT SIDE -->
-    <div class="left md:flex-1 w-full md:w-[45%] text-center md:text-left">
+    <div class="relative w-full md:w-1/2 text-center md:text-left">
 
-    <span class="text-gray-500 text-lg md:text-xl">Hi I am</span>
-    <h1 class="text-gray-300 text-2xl md:text-3xl mt-2">
-    Anas Mukhtar
-    </h1>
+        <!-- Availability Badge -->
+        <div class="absolute -top-12 left-0 z-20">
+            <div class="inline-flex items-center gap-3 rounded-full
+                        border border-lime-500/30
+                        bg-lime-500/10 px-5 py-2.5">
 
-    <h1 class="font-bold text-4xl md:text-5xl mt-4">
-     Web Developer
-    </h1>
+                <span class="h-2.5 w-2.5 rounded-full bg-lime-400"></span>
 
-    <!-- SOCIAL ICONS -->
-    <div class="icon mt-8 flex justify-center md:justify-start gap-5 text-2xl">
+                <h3 class="text-sm font-semibold text-lime-400">
+                    Available for Opportunities
+                </h3>
 
-        <a class="text-gray-400 hover:text-red-600 transition"  target="_blank" href="https://www.youtube.com/@Naatofficial-s6f">
-        <i class="fa-brands fa-youtube"></i>
-        </a>
+            </div>
+        </div>
 
-        <a class="text-gray-400 hover:text-blue-600 transition" target="_blank" href="https://www.facebook.com/zenviaofficial">
-        <i class="fa-brands fa-facebook"></i>
-        </a>
+        <!-- HERO HEADING -->
+        <h1 class="font-poppins text-4xl sm:text-5xl
+                   lg:text-[60px] font-bold
+                   leading-[1.05] tracking-tight text-white">
 
-        <a class="text-gray-400  hover:text-pink-500 transition"  target="_blank" href="https://www.instagram.com/zenviacollection_uk/">
-        <i class="fa-brands fa-instagram"></i>
-        </a>
+            Building Digital
 
-        <a class="text-gray-400 hover:text-blue-400 transition"  target="_blank" href="">
-        <i class="fa-brands fa-twitter"></i>
-        </a>
+            <span class="block text-[#FE6D01]">
+                Experiences.
+            </span>
+
+        </h1>
+
+        <!-- PROFESSION -->
+        <h2 class="font-poppins text-xl sm:text-2xl
+                   lg:text-3xl font-bold mt-5
+                   text-[#9ADE08]">
+
+            Full-Stack Developer
+
+        </h2>
+
+        <!-- DESCRIPTION -->
+        <p class="font-poppins text-sm sm:text-base
+                  text-[#BDBDBD] leading-relaxed
+                  mt-5 max-w-xl mx-auto md:mx-0">
+
+            I'm <span class="text-white font-semibold">
+                Anas Mukhtar
+            </span>,
+            a Full-Stack Developer specializing in Django,
+            Python and modern web technologies.
+
+        </p>
+
+
+        <!-- SOCIAL ICONS -->
+        <div class="mt-8 flex justify-center md:justify-start
+                    gap-6 text-2xl">
+
+            <a href="https://www.youtube.com/@Naatofficial-s6f"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="YouTube"
+               class="text-[#BDBDBD] hover:text-[#FF0000]
+                      hover:-translate-y-1 transition duration-300">
+
+                <i class="fa-brands fa-youtube"></i>
+
+            </a>
+
+            <a href="https://www.facebook.com/zenviaofficial"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Facebook"
+               class="text-[#BDBDBD] hover:text-[#1877F2]
+                      hover:-translate-y-1 transition duration-300">
+
+                <i class="fa-brands fa-facebook"></i>
+
+            </a>
+
+            <a href="https://www.instagram.com/zenviacollection_uk/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram"
+               class="text-[#BDBDBD] hover:text-[#E4405F]
+                       hover:-translate-y-1 transition duration-300">
+
+                <i class="fa-brands fa-instagram"></i>
+
+            </a>
+
+            <a href="#"
+                       aria-label="Twitter"
+                       class="text-[#F5F5F5]/70 hover:text-[#F5F5F5] hover:-translate-y-1 transition duration-300">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+        <div class="mt-9 flex flex-col sm:flex-row
+                    gap-4 justify-center md:justify-start">
+
+            <!-- HIRE ME -->
+            <a href="https://wa.me/923361441053?text=Hi%20I%20want%20to%20hire%20you"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center
+                      gap-2 px-7 py-3 rounded-full
+                      bg-[#FE6D01] text-black
+                      font-poppins font-semibold text-sm
+                      border border-[#FE6D01]
+                      hover:bg-transparent
+                      hover:text-[#FE6D01]
+                      transition-all duration-300">
+
+                Hire Me
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <!-- DOWNLOAD CV -->
+            <a href="{% static 'files/Anas_CV.pdf' %}"
+               download
+               class="inline-flex items-center justify-center
+                      gap-2 px-7 py-3 rounded-full
+                      border border-[#9ADE08]
+                      text-white font-poppins
+                      font-semibold text-sm
+                      hover:bg-[#9ADE08]
+                      hover:text-black
+                      transition-all duration-300">
+
+                Download CV
+
+                <i class="fa-solid fa-download"></i>
+
+            </a>
+
+        </div>
+
+
+        <!-- STATS -->
+        <div class="mt-12 grid grid-cols-3 gap-3 sm:gap-6
+                    bg-[#111111] border border-[#353535]
+                    rounded-2xl p-5 text-center">
+
+            <!-- EXPERIENCE -->
+            <div class="md:border-r border-[#353535]">
+
+                <h3 class="text-2xl sm:text-3xl
+                           font-bold text-[#FE6D01]">
+
+                    5+
+
+                </h3>
+
+                <p class="text-xs sm:text-sm
+                          text-[#BDBDBD] mt-1">
+
+                    Experience
+
+                </p>
+
+            </div>
+
+
+            <!-- PROJECTS -->
+            <div class="md:border-r border-[#353535]">
+
+                <h3 class="text-2xl sm:text-3xl
+                           font-bold text-[#9ADE08]">
+
+                    20+
+
+                </h3>
+
+                <p class="text-xs sm:text-sm
+                          text-[#BDBDBD] mt-1">
+
+                    Projects
+
+                </p>
+
+            </div>
+
+
+            <!-- CLIENTS -->
+            <div>
+
+                <h3 class="text-2xl sm:text-3xl
+                           font-bold text-[#FE6D01]">
+
+                    80+
+
+                </h3>
+
+                <p class="text-xs sm:text-sm
+                          text-[#BDBDBD] mt-1">
+
+                    Happy Clients
+
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
 
-    <!-- BUTTONS -->
-    <div class="btn mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
 
-        <button class="px-6 py-2border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden">
-            <a href="https://wa.me/923361441053?text=Hi%20I%20want%20to%20hire%20you" 
-   target="_blank" 
-   class="hire-btn">
-    Hire Me
-</a>
-        </button>
+    <!-- ================= RIGHT SIDE IMAGE ================= -->
 
-<button >
-        <a 
-    href="{% static 'files/Anas_CV.pdf' %}" 
-    download
-    class="inline-flex items-center gap-2 px-6 py-3 
-        border border-green-500 relative before:absolute before:inset-0 before:w-0 hover:before:w-full before:bg-green-500 before:transition-all before:duration-200 before:-z-10 rounded-md text-white hover:text-white overflow-hidden"
+    <div class="w-full md:w-1/2
+                flex justify-center items-center
+                mt-8 md:mt-0">
+
+        <div class="relative w-full
+                    max-w-[380px]
+                    sm:max-w-[440px]
+                    lg:max-w-[500px]
+                    h-[420px] sm:h-[520px]
+                    md:h-[75vh] md:max-h-[750px]
+                    md:min-h-[550px]">
+
+            <!-- PROFILE IMAGE -->
+           <img
+    src="{% static 'images/port.jpg' %}"
+    alt="Anas Mukhtar - Full Stack Developer"
+    class="relative mx-auto h-[75vh] w-auto max-w-full object-contain object-center"
 >
-    Download CV
-</a>
-    </button>
+
+        </div>
 
     </div>
 
-    <!-- STATS -->
-    <div class="work mt-10 md:w-fit flex flex-col sm:flex-row gap-6 md:gap-10 bg-gray-900 p-4 rounded-lg text-center md:text-left">
+</section>
 
-    <div class="md:border-r border-gray-600 pr-4">
-        <h3 class="font-bold text-xl">5+</h3>
-        <p class="text-white">Experience</p>
+
+<section class="bg-[#0B0B0B] min-h-screen flex items-center justify-center px-6 md:px-16 py-16">
+
+    <div class="main max-w-7xl w-full flex flex-col md:flex-row items-center justify-center gap-12">
+
+        <!-- LEFT IMAGE -->
+        <div class="left w-full md:w-1/2 flex justify-center">
+
+            <div class="relative">
+
+                <div class="absolute -inset-2 border-2 border-[#FF7900] rounded-2xl rotate-3"></div>
+
+                <img
+                    class="relative w-[250px] sm:w-[300px] md:w-[350px] rounded-2xl object-cover border-2 border-[#171717] shadow-2xl"
+                    src="{% static 'images/portfolio.jpeg' %}"
+                    alt="Profile"
+                >
+
+            </div>
+
         </div>
 
-        <div class="md:border-r border-gray-600 pr-4">
-        <h3 class="font-bold text-xl">20+</h3>
-        <p class="text-white">Projects</p>
+        <!-- RIGHT CONTENT -->
+        <div class="right w-full md:w-1/2">
+
+            <div class="content text-center md:text-left">
+
+                <!-- SMALL HEADING -->
+                <p class="text-[#B6F23A] font-semibold tracking-widest uppercase text-sm mb-3">
+                    Get To Know Me
+                </p>
+
+                <!-- MAIN HEADING -->
+                <h1 class="text-4xl sm:text-5xl font-bold text-[#FF7900] mb-6">
+                    About Me
+                </h1>
+
+                <div class="w-20 h-1 bg-[#B6F23A] rounded-full mx-auto md:mx-0 mb-8"></div>
+
+                <!-- DESCRIPTION -->
+                <div class="text-[#F5F5F5] leading-8 text-sm sm:text-base space-y-5">
+
+                    <p>
+                        Hi, I'm
+                        <span class="text-[#FF7900] font-bold">
+                            Anas Mukhtar
+                        </span>
+                        — a full-stack web developer and creative designer focused on building modern,
+                        high-performance digital experiences.
+                    </p>
+
+                    <p>
+                        I specialize in crafting responsive frontends, scalable backend systems,
+                        and intuitive UI/UX designs that combine aesthetics with functionality.
+                    </p>
+
+                    <p>
+                        Beyond traditional development, I create immersive 3D animations and dynamic
+                        web applications that elevate user interaction and bring ideas to life.
+                    </p>
+
+                </div>
+
+                <!-- SKILLS / HIGHLIGHTS -->
+                <div class="grid grid-cols-2 gap-4 mt-8">
+
+                    <div class="bg-[#171717] border border-[#F5F5F5]/10 rounded-xl p-4 hover:border-[#FF7900] transition duration-300">
+                        <h3 class="text-[#FF7900] font-bold text-lg">
+                            Frontend
+                        </h3>
+                        <p class="text-[#F5F5F5] text-sm mt-1">
+                            HTML, CSS, JavaScript
+                        </p>
+                    </div>
+
+                    <div class="bg-[#171717] border border-[#F5F5F5]/10 rounded-xl p-4 hover:border-[#B6F23A] transition duration-300">
+                        <h3 class="text-[#B6F23A] font-bold text-lg">
+                            Backend
+                        </h3>
+                        <p class="text-[#F5F5F5] text-sm mt-1">
+                            Python, Django
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- DOWNLOAD CV BUTTON -->
+                <div class="mt-9 flex justify-center md:justify-start">
+
+                    <a
+                        href="{% static 'files/Anas_CV.pdf' %}"
+                        download
+                        class="inline-flex items-center gap-3 px-7 py-3 bg-[#FF7900] text-[#0B0B0B] font-bold rounded-lg hover:bg-[#B6F23A] hover:scale-105 transition-all duration-300 shadow-lg"
+                    >
+                        <i class="fa-solid fa-download"></i>
+                        Download CV
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills"
+    class="w-full min-h-screen flex flex-col justify-center
+           rounded-2xl 
+           bg-[#0D0F10] px-6 py-12 md:px-10">
+
+    <!-- Heading -->
+    <h2 class="mb-12 text-center text-3xl md:text-4xl
+               font-bold text-white">
+        My <span class="text-orange-500">Skills</span>
+    </h2>
+
+    <!-- Skills Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4
+                lg:grid-cols-4 xl:grid-cols-4
+                gap-5 md:gap-7 max-w-4xl w-full mx-auto">
+
+        <!-- Python -->
+        <div class="group flex h-32 md:h-36 w-full
+                    flex-col items-center justify-center gap-3
+                    rounded-xl border border-[#27313D]
+                    bg-[#111720] transition-all duration-300
+                    hover:border-lime-400 hover:-translate-y-1">
+            <i class="devicon-python-plain colored text-4xl"></i>
+            <span class="text-sm font-semibold text-white">Python</span>
+        </div>
+
+        <!-- Django -->
+        <div class="group flex h-32 md:h-36 w-full
+                    flex-col items-center justify-center gap-3
+                    rounded-xl border border-[#27313D]
+                    bg-[#111720] transition-all duration-300
+                    hover:border-lime-400 hover:-translate-y-1">
+            <i class="devicon-django-plain text-white text-4xl"></i>
+            <span class="text-sm font-semibold text-white">Django</span>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="group flex h-32 md:h-36 w-full
+                    flex-col items-center justify-center gap-3
+                    rounded-xl border border-[#27313D]
+                    bg-[#111720] transition-all duration-300
+                    hover:border-lime-400 hover:-translate-y-1">
+            <i class="devicon-javascript-plain colored text-4xl"></i>
+            <span class="text-sm font-semibold text-white">JavaScript</span>
+        </div>
+
+        <!-- Tailwind -->
+        <div class="group flex h-32 md:h-36 w-full
+                    flex-col items-center justify-center gap-3
+                    rounded-xl border border-[#27313D]
+                    bg-[#111720] transition-all duration-300
+                    hover:border-lime-400 hover:-translate-y-1">
+            <i class="devicon-tailwindcss-original colored text-4xl"></i>
+            <span class="text-sm font-semibold text-white">Tailwind CSS</span>
+        </div>
+
+        <!-- HTML -->
+        <div class="group flex h-32 md:h-36 w-full
+                    flex-col items-center justify-center gap-3
+                    rounded-xl border border-[#27313D]
+                    bg-[#111720] transition-all duration-300
+                    hover:border-lime-400 hover:-translate-y-1">
+            <i class="devicon-html5-plain colored text-4xl"></i>
+            <span class="text-sm font-semibold text-white">HTML5</span>
+        </div>
+
+        <!-- CSS -->
+        <div class="group flex h-32 md:h-36 w-full
+                    flex-col items-center justify-center gap-3
+                    rounded-xl border border-[#27313D]
+                    bg-[#111720] transition-all duration-300
+                    hover:border-lime-400 hover:-translate-y-1">
+            <i class="devicon-css3-plain colored text-4xl"></i>
+            <span class="text-sm font-semibold text-white">CSS3</span>
+        </div>
+
+        <!-- Git -->
+        <div class="group flex h-32 md:h-36 w-full
+                    flex-col items-center justify-center gap-3
+                    rounded-xl border border-[#27313D]
+                    bg-[#111720] transition-all duration-300
+                    hover:border-lime-400 hover:-translate-y-1">
+            <i class="devicon-git-plain colored text-4xl"></i>
+            <span class="text-sm font-semibold text-white">Git</span>
+        </div>
+
+        <!-- MySQL -->
+        <div class="group flex h-32 md:h-36 w-full
+                    flex-col items-center justify-center gap-3
+                    rounded-xl border border-[#27313D]
+                    bg-[#111720] transition-all duration-300
+                    hover:border-lime-400 hover:-translate-y-1">
+            <i class="devicon-mysql-plain colored text-4xl"></i>
+            <span class="text-sm font-semibold text-white">MySQL</span>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- PROJECTS SECTION -->
+<section id="projects"
+    class="w-full min-h-screen flex flex-col justify-center
+           bg-[#080B10] border border-[#27313D]
+           rounded-2xl px-6 py-12 md:px-10 lg:px-14">
+
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row
+                justify-between items-center mb-12 gap-4">
 
         <div>
-        <h3 class="font-bold text-xl">80+</h3>
-        <p class="text-white">Happy Clients</p>
+            <p class="text-sm font-semibold tracking-[3px]
+                      text-lime-400 mb-2">
+                MY RECENT WORK
+            </p>
+
+            <h2 class="text-3xl md:text-4xl font-bold text-white">
+                Featured <span class="text-orange-500">Projects.</span>
+            </h2>
+
+            <p class="mt-3 text-gray-400 text-sm">
+                Some projects I've built using modern technologies.
+            </p>
+        </div>
+
+        <span class="rounded-full border border-[#27313D]
+                     px-4 py-2 text-xs text-gray-400">
+            03 Projects
+        </span>
+    </div>
+
+
+    <!-- PROJECT CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3
+                gap-7">
+
+        <!-- PROJECT 01 -->
+        <div class="group overflow-hidden rounded-2xl
+                    border border-[#27313D] bg-[#111720]
+                    transition-all duration-300
+                    hover:-translate-y-2 hover:border-lime-400">
+
+            <!-- Project Preview -->
+            <div class="relative h-52 overflow-hidden
+                        bg-gradient-to-br from-[#172B24]
+                        via-[#111720] to-[#080B10]
+                        flex items-center justify-center">
+
+                <div class="text-center">
+                    <i class="devicon-django-plain text-6xl text-lime-400"></i>
+                    <p class="mt-3 text-sm font-bold text-white">
+                        DJANGO WEB APP
+                    </p>
+                </div>
+
+                <span class="absolute top-4 left-4 rounded-full
+                             bg-lime-400/10 px-3 py-1
+                             text-xs text-lime-400">
+                    01 / Web Development
+                </span>
+            </div>
+
+            <!-- Project Details -->
+            <div class="p-6">
+
+                <h3 class="text-xl font-bold text-white
+                           group-hover:text-lime-400 transition">
+                    E-Commerce Website
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-gray-400">
+                    A modern online shopping platform with
+                    product listings, user authentication
+                    and a responsive interface.
+                </p>
+
+                <!-- Technologies -->
+                <div class="flex flex-wrap gap-2 mt-5">
+                    <span class="rounded-md bg-[#202B36] px-3 py-1
+                                 text-xs text-lime-400">Python</span>
+                    <span class="rounded-md bg-[#202B36] px-3 py-1
+                                 text-xs text-lime-400">Django</span>
+                    <span class="rounded-md bg-[#202B36] px-3 py-1
+                                 text-xs text-lime-400">Tailwind</span>
+                </div>
+
+                <!-- Links -->
+                <div class="flex items-center gap-5 mt-6
+                            border-t border-[#27313D] pt-5">
+                    <a href="#" target="_blank"
+                       class="text-sm font-semibold text-white
+                              hover:text-orange-500 transition border border-orange-500 p-2 rounded-md">
+                        Live Demo 
+                    </a>
+
+                    <a href="#" target="_blank"
+                       class="text-sm font-semibold text-gray-400
+                              hover:text-lime-400 transition">
+                        Source Code 
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- PROJECT 02 -->
+        <div class="group overflow-hidden rounded-2xl
+                    border border-[#27313D] bg-[#111720]
+                    transition-all duration-300
+                    hover:-translate-y-2 hover:border-lime-400">
+
+            <!-- Project Preview -->
+            <div class="relative h-52 overflow-hidden
+                        bg-gradient-to-br from-[#25203B]
+                        via-[#111720] to-[#080B10]
+                        flex items-center justify-center">
+
+                <div class="text-center">
+                    <i class="devicon-javascript-plain text-6xl text-yellow-400"></i>
+                    <p class="mt-3 text-sm font-bold text-white">
+                        JAVASCRIPT PROJECT
+                    </p>
+                </div>
+
+                <span class="absolute top-4 left-4 rounded-full
+                             bg-orange-500/10 px-3 py-1
+                             text-xs text-orange-400">
+                    02 / Frontend Development
+                </span>
+            </div>
+
+            <!-- Project Details -->
+            <div class="p-6">
+
+                <h3 class="text-xl font-bold text-white
+                           group-hover:text-lime-400 transition">
+                    Task Management App
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-gray-400">
+                    An interactive productivity application
+                    to organize daily tasks, manage priorities
+                    and track work progress.
+                </p>
+
+                <!-- Technologies -->
+                <div class="flex flex-wrap gap-2 mt-5">
+                    <span class="rounded-md bg-[#202B36] px-3 py-1
+                                 text-xs text-lime-400">HTML5</span>
+                    <span class="rounded-md bg-[#202B36] px-3 py-1
+                                 text-xs text-lime-400">CSS3</span>
+                    <span class="rounded-md bg-[#202B36] px-3 py-1
+                                 text-xs text-lime-400">JavaScript</span>
+                </div>
+
+                <!-- Links -->
+                <div class="flex items-center gap-5 mt-6
+                            border-t border-[#27313D] pt-5">
+                    <a href="#" target="_blank"
+                       class="text-sm font-semibold text-white
+                              hover:text-orange-500 transition border border-orange-500 p-2 rounded-md">
+                        Live Demo 
+                    </a>
+
+                    <a href="#" target="_blank"
+                       class="text-sm font-semibold text-gray-400
+                              hover:text-lime-400 transition">
+                        Source Code 
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- PROJECT 03 -->
+        <div class="group overflow-hidden rounded-2xl
+                    border border-[#27313D] bg-[#111720]
+                    transition-all duration-300
+                    hover:-translate-y-2 hover:border-lime-400">
+
+            <!-- Project Preview -->
+            <div class="relative h-52 overflow-hidden
+                        bg-gradient-to-br from-[#18303B]
+                        via-[#111720] to-[#080B10]
+                        flex items-center justify-center">
+
+                <div class="text-center">
+                    <i class="devicon-python-plain text-6xl text-cyan-400"></i>
+                    <p class="mt-3 text-sm font-bold text-white">
+                        PYTHON APPLICATION
+                    </p>
+                </div>
+
+                <span class="absolute top-4 left-4 rounded-full
+                             bg-cyan-400/10 px-3 py-1
+                             text-xs text-cyan-400">
+                    03 / Python Development
+                </span>
+            </div>
+
+            <!-- Project Details -->
+            <div class="p-6">
+
+                <h3 class="text-xl font-bold text-white
+                           group-hover:text-lime-400 transition">
+                    SEO Analyzer Tool
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-gray-400">
+                    A website analysis tool that evaluates
+                    SEO elements and presents useful insights
+                    to improve website performance.
+                </p>
+
+                <!-- Technologies -->
+                <div class="flex flex-wrap gap-2 mt-5">
+                    <span class="rounded-md bg-[#202B36] px-3 py-1
+                                 text-xs text-lime-400">Python</span>
+                    <span class="rounded-md bg-[#202B36] px-3 py-1
+                                 text-xs text-lime-400">Django</span>
+                    <span class="rounded-md bg-[#202B36] px-3 py-1
+                                 text-xs text-lime-400">JavaScript</span>
+                </div>
+
+                <!-- Links -->
+                <div class="flex items-center gap-5 mt-6
+                            border-t border-[#27313D] pt-5">
+                    <a href="#" target="_blank"
+                       class="text-sm font-semibold text-white
+                              hover:text-orange-500 transition border border-orange-500 p-2 rounded-md">
+                        Live Demo 
+                    </a>
+
+                    <a href="#" target="_blank"
+                       class="text-sm font-semibold text-gray-400
+                              hover:text-lime-400 transition border border-zinc-800">
+                        Source Code 
+                    </a>
+                </div>
+
+            </div>
         </div>
 
     </div>
 
+
+    <!-- VIEW MORE PROJECTS -->
+    <div class="mt-12 flex justify-center">
+
+        <a href="{% url 'portfolio' %}"
+           class="group inline-flex items-center gap-3
+                  rounded-full border border-lime-400/50
+                  px-8 py-3.5 text-sm font-semibold
+                  text-lime-400 transition-all duration-300
+                  hover:bg-lime-400 hover:text-black">
+
+            View More Projects
+
+            <span class="transition-transform
+                         group-hover:translate-x-1">
+                →
+            </span>
+
+        </a>
+
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="right w-full md:w-[45%] flex justify-center mt-10 mb-5 md:mt-0">
+</section>
 
-    <img
-        class=" w-[250px] md:w-[320px] shadow-lg"
-    src="{% static 'images/portfolio.jpeg' %}"
-    alt="profile"
-    >
 
-    </div>
 
+<div class="container text-4xl p-5 font-bold mx-auto my-9 text-orange-500 text-center">
+    <h1>Contact <span class="text-white">Me</span> </h1>
 </div>
 
+<form method="post" action="{% url 'contact' %}">
+{% csrf_token %}
+
+<div class="flex flex-col md:flex-row justify-center gap-6 md:gap-10 px-4">
+
+    <div class="left flex flex-col gap-5 w-full md:w-1/3 text-white font-sans">
+        <input type="text" name="name" placeholder="Name" class="bg-[#111720] text-white placeholder-[#94A3B8] border border-[#27313D] focus:border-[#A3FF12] p-3 rounded-xl outline-none w-full">
+        <input type="text" name="phone" placeholder="Phone Number" class="bg-[#111720] text-white placeholder-[#94A3B8] border border-[#27313D] focus:border-[#A3FF12] p-3 rounded-xl outline-none w-full">
+        <input type="text" name="timeline" placeholder="Timeline" class="bg-[#111720] text-white placeholder-[#94A3B8] border border-[#27313D] focus:border-[#A3FF12] p-3 rounded-xl outline-none w-full">
+    </div>
+
+    <div class="right flex flex-col gap-5 w-full md:w-1/3 text-white font-sans">
+        <input type="text" name="email" placeholder="Email" class="bg-[#111720] text-white placeholder-[#94A3B8] border border-[#27313D] focus:border-[#A3FF12] p-3 rounded-xl outline-none w-full">
+        <input type="text" name="services" placeholder="Services of interest" id="sinput" class="bg-[#111720] text-white placeholder-[#94A3B8] border border-[#27313D] focus:border-[#A3FF12] p-3 rounded-xl outline-none w-full">
+        <textarea placeholder="Message..." name="message" class="bg-[#111720] text-white placeholder-[#94A3B8] border border-[#27313D] focus:border-[#A3FF12] p-3 rounded-xl outline-none w-full h-32"></textarea>
+
+        <div class="flex justify-end">
+            <button type="submit" class="px-4 py-2 border border-[#A3FF12] bg-[#A3FF12] text-[#080B10] font-semibold relative rounded-md hover:bg-[#C4FF52] hover:border-[#C4FF52] transition-all duration-200">
+                Submit
+            </button>
+        </div>
+    </div>
+</div>
+</form>
+
 {% endblock %}
-    <footer class="bg-gray-900 text-white mt-48">
 
-<div class="max-w-7xl mx-auto px-6 py-10">
 
-    <!-- LOGO -->
-    <div class="text-center text-orange-400 font-bold text-2xl md:text-3xl">
-    <a href="#">Hexora</a>
+
+<footer class="bg-[#0B0B0B] text-[#F5F5F5] border-t border-[#171717] mt-32">
+
+    <div class="max-w-7xl mx-auto px-6 pt-16 pb-8">
+
+        <!-- MAIN FOOTER -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+
+            <!-- BRAND / LOGO -->
+            <div>
+
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-wide text-[#FF7900]">
+                    <a href="#" class="hover:text-[#F5F5F5] transition duration-300">
+                        Hexora<span class="text-[#B6F23A]">.</span>
+                    </a>
+                </h2>
+
+                <p class="text-[#F5F5F5]/70 mt-5 leading-7 text-sm">
+                    Digital Experiences. Built Better.
+                    Turning creative ideas into powerful digital solutions
+                    through modern web development.
+                </p>
+
+                <!-- SOCIAL ICONS -->
+                <div class="flex gap-5 mt-7 text-2xl">
+
+                    <!-- YOUTUBE -->
+                    <a href="https://www.youtube.com/@Naatofficial-s6f"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="YouTube"
+                       class="text-[#F5F5F5]/70 hover:text-[#FF0000] hover:-translate-y-1 transition duration-300">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <!-- FACEBOOK -->
+                    <a href="https://www.facebook.com/zenviaofficial"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Facebook"
+                       class="text-[#F5F5F5]/70 hover:text-[#1877F2] hover:-translate-y-1 transition duration-300">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <!-- INSTAGRAM -->
+                    <a href="https://www.instagram.com/zenviacollection_uk/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Instagram"
+                       class="text-[#F5F5F5]/70 hover:text-[#E4405F] hover:-translate-y-1 transition duration-300">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <!-- TWITTER / X -->
+                    <a href="#"
+                       aria-label="Twitter"
+                       class="text-[#F5F5F5]/70 hover:text-[#F5F5F5] hover:-translate-y-1 transition duration-300">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+            <div>
+
+                <h3 class="text-lg font-bold text-[#FF7900] mb-6">
+                    Quick Links
+                </h3>
+
+                <ul class="space-y-4 text-sm text-[#F5F5F5]/70">
+
+                    <li>
+                        <a href="{% url 'home' %}"
+                           class="hover:text-[#B6F23A] transition duration-300">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'about' %}"
+                           class="hover:text-[#B6F23A] transition duration-300">
+                            About Me
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'services' %}"
+                           class="hover:text-[#B6F23A] transition duration-300">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'portfolio' %}"
+                           class="hover:text-[#B6F23A] transition duration-300">
+                            Portfolio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contact' %}"
+                           class="hover:text-[#B6F23A] transition duration-300">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- SERVICES -->
+            <div>
+
+                <h3 class="text-lg font-bold text-[#FF7900] mb-6">
+                    My Services
+                </h3>
+
+                <ul class="space-y-4 text-sm text-[#F5F5F5]/70">
+
+                    <li class="hover:text-[#B6F23A] transition">
+                        Frontend Development
+                    </li>
+
+                    <li class="hover:text-[#B6F23A] transition">
+                        Backend Development
+                    </li>
+
+                    <li class="hover:text-[#B6F23A] transition">
+                        Full Stack Development
+                    </li>
+
+                    <li class="hover:text-[#B6F23A] transition">
+                        UI Implementation
+                    </li>
+
+                    <li class="hover:text-[#B6F23A] transition">
+                        Website Optimization
+                    </li>
+
+                    <li class="hover:text-[#B6F23A] transition">
+                        Website Maintenance
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT -->
+            <div>
+
+                <h3 class="text-lg font-bold text-[#FF7900] mb-6">
+                    Get In Touch
+                </h3>
+
+                <ul class="space-y-5 text-sm text-[#F5F5F5]/70">
+
+                    <!-- EMAIL -->
+                    <li class="flex items-start gap-3">
+
+                        <i class="fa-solid fa-envelope text-[#B6F23A] mt-1"></i>
+
+                        <a href="mailto:Anasmukhtar542@gmail.com"
+                           class="hover:text-[#FF7900] transition break-all">
+                            Anasmukhtar542@gmail.com
+                        </a>
+
+                    </li>
+
+                    <!-- PHONE -->
+                    <li class="flex items-center gap-3">
+
+                        <i class="fa-solid fa-phone text-[#B6F23A]"></i>
+
+                        <a href="tel:+923010650277"
+                           class="hover:text-[#FF7900] transition">
+                            +92 3010650277
+                        </a>
+
+                    </li>
+
+                </ul>
+
+                <!-- CONTACT BUTTON -->
+                <a href="{% url 'contact' %}"
+                   class="inline-block mt-7 px-6 py-3 bg-[#FF7900] text-[#0B0B0B] font-bold rounded-lg hover:bg-[#B6F23A] hover:scale-105 transition-all duration-300">
+
+                    Let's Talk
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="border-t border-[#171717] mt-14 pt-7 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#F5F5F5]/60">
+
+            <p>
+                © 2026
+                <span class="text-[#FF7900] font-bold">Hexora<span class="text-[#B6F23A]">.</span></span>
+                All Rights Reserved.
+            </p>
+
+            <p>
+                Designed & Developed by
+                <span class="text-[#B6F23A] font-semibold">
+                    Anas Mukhtar
+                </span>
+            </p>
+
+        </div>
+
     </div>
 
-    <!-- LINKS -->
-    <ul class="flex flex-wrap justify-center gap-6 md:gap-10 mt-6 text-sm md:text-lg font-medium">
+</footer>
 
-        <li><a href="{% url 'home' %}" class="hover:text-orange-400 transition {% if request.path == '/' %} factive{% endif %}">Home</a></li>
-        <li><a href="{% url 'about' %}" class="hover:text-orange-400 transition {% if request.path == '/about/' %} factive{% endif %}">About</a></li>
-        <li><a href="{% url 'services' %}" class="hover:text-orange-400 transition {% if request.path == '/services/' %} factive{% endif %}">Services</a></li>
-        <li><a href="{% url 'portfolio' %}" class="hover:text-orange-400 transition {% if request.path == '/portfolio/' %} factive{% endif %}">Portfolio</a></li>
-        <li><a href="{% url 'contact' %}" class="hover:text-orange-400 transition {% if request.path == '/contact/' %} factive{% endif %}">Contact</a></li>
-
-    </ul>
-
-    <!-- SOCIAL ICONS -->
-    <div class="flex justify-center gap-6 mt-8 text-2xl">
-
-    <a class="text-gray-400 hover:text-red-500 transition"  target="_blank" href="https://www.youtube.com/@Naatofficial-s6f">
-        <i class="fa-brands fa-youtube"></i>
-    </a>
-
-    <a class="text-gray-400 hover:text-blue-600 transition"  target="_blank" href="https://www.facebook.com/zenviaofficial">
-        <i class="fa-brands fa-facebook"></i>
-    </a>
-
-    <a class="text-gray-400 hover:text-pink-500 transition" target="_blank" href="https://www.instagram.com/zenviacollection_uk/">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
-
-    <a class="text-gray-400 hover:text-blue-400 transition"  target="_blank" href="#">
-        <i class="fa-brands fa-twitter"></i>
-    </a>
-
-    </div>
-
-    <!-- CONTACT -->
-    <div class=" font-sans flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10 mt-10 text-sm md:text-base border-t border-orange-500 pt-6">
-
-    <a href="mailto:anas@example.com" class="flex items-center gap-2 hover:text-orange-400">
-        <i class="fa-solid fa-envelope text-orange-400 "></i>
-        Anasmukhtar542@gmail.com</a>
-    <a href="tel:+923010650277" class="flex items-center gap-2 hover:text-orange-400">
-        <i class="fa-solid fa-phone text-orange-400"></i>
-        +92 3010650277</a>
-    </div>
-    </div>
-
-    </footer>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
